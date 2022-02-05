@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "parcel build src/manifest.json --log-level error",
+    "build": "parcel build src/manifest.json",
     "watch": "parcel watch src/manifest.json",
     "runc": "web-ext run -t chromium -u='https://www.reddit.com/r/reactiongifs/comments/skikai/mrw_my_wix_app_tells_me_someone_clicked_my/' -u='messenger.com'",
     "runf": "web-ext run -u='https://www.reddit.com/r/reactiongifs/comments/skikai/mrw_my_wix_app_tells_me_someone_clicked_my/' -u='messenger.com' --verbose"

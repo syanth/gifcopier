@@ -15,19 +15,12 @@
     },
 
     "permissions": [
-        "contextMenus",
-        "downloads"
+        "contextMenus"
     ],
 
     "background": {
         "scripts": [
             "background.js"
         ]
-    },
-
-    "options_ui": {
-        "page": "options/options.html",
-        "browser_style": true,
-        "chrome_style": true
     }
 }
