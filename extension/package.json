@@ -1,0 +1,20 @@
+{
+  "scripts": {
+    "build": "parcel build src/manifest.json --log-level error",
+    "watch": "parcel watch src/manifest.json",
+    "runc": "web-ext run -t chromium -u='https://www.reddit.com/r/reactiongifs/comments/skikai/mrw_my_wix_app_tells_me_someone_clicked_my/' -u='messenger.com'",
+    "runf": "web-ext run -u='https://www.reddit.com/r/reactiongifs/comments/skikai/mrw_my_wix_app_tells_me_someone_clicked_my/' -u='messenger.com' --verbose"
+  },
+  "author": "syanth",
+  "license": "ISC",
+  "devDependencies": {
+    "@parcel/config-webextension": "^2.2.1",
+    "web-ext": "^6.6.0"
+  },
+  "webExt": {
+    "sourceDir": "dist"
+  },
+  "dependencies": {
+    "webextension-polyfill": "^0.8.0"
+  }
+}

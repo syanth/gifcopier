@@ -1,0 +1,12 @@
+label {
+    display: block;
+    color: #000000;
+    font-weight: 600;
+  }
+.emoteform {
+    padding: 1px;
+  }
+  label,
+  .upload {
+    margin: .4rem 0;
+}
