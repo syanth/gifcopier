@@ -5,6 +5,11 @@
 ### Web Extension Build ###
 /extension/dist/
 
+# Unnecessary files due to CMake
+*.sln
+*.vcxproj
+*.vcxproj.filters
+
 ### CMake ###
 CMakeLists.txt.user
 CMakeCache.txt
@@ -161,6 +166,27 @@ dist
 
 # SvelteKit build / generate output
 .svelte-kit
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
+
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# Support for Project snippet scope
 
 ### VisualStudio ###
 ## Ignore Visual Studio temporary files, build results, and
@@ -538,15 +564,9 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # VS Code files for those working on multiple tools
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 *.code-workspace
 
 # Local History for Visual Studio Code
-.history/
 
 # Windows Installer files from build outputs
 *.cab
@@ -558,12 +578,7 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Unnecessary files due to CMake
-*.sln
-*.vcxproj
-*.vcxproj.filters
-
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/node,visualstudio,cmake
+# End of https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,cmake,node
