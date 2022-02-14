@@ -2,8 +2,9 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,visualstudio,cmake
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,visualstudio,cmake
 
-### Web Extension Build ###
+### Build ###
 /extension/dist/
+/app/build/
 
 ### CMake ###
 CMakeLists.txt.user

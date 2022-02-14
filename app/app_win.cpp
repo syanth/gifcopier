@@ -4,6 +4,13 @@
 #include <Shlobj_core.h>
 #include "clipapp.h"
 
+#ifdef _DEBUG
+#define _CRTDBG_MAP_ALLOC
+#define _CRTDBG_MAP_ALLOC_NEW
+#include <stdlib.h>
+#include <crtdbg.h>
+#endif
+
 int CopyToClipboard(std::string pathStr) {
     // String Conversion for Windows API
     const char* pathPtr = pathStr.c_str();
