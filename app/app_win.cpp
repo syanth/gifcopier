@@ -4,6 +4,13 @@
 #include <Shlobj_core.h>
 #include "clipapp.h"
 
+#ifdef _DEBUG
+#define _CRTDBG_MAP_ALLOC
+#define _CRTDBG_MAP_ALLOC_NEW
+#include <stdlib.h>
+#include <crtdbg.h>
+#endif
+
 int CopyToClipboard(std::string pathStr) {
     // String Conversion for Windows API
     const char* pathPtr = pathStr.c_str();
@@ -16,7 +23,9 @@ int CopyToClipboard(std::string pathStr) {
 
     // GlobalAlloc memory so Windows can re-allocate
     HDROP hdrop   = (HDROP)GlobalAlloc(GHND, clpSize);
+    if (!hdrop) return MEM_ERR;
     DROPFILES* df = (DROPFILES*)GlobalLock(hdrop);
+    if (!df) return MEM_ERR;
     df->pFiles    = sizeof(DROPFILES);
     df->fWide     = TRUE;
 
@@ -28,7 +37,7 @@ int CopyToClipboard(std::string pathStr) {
     // Ownership of allocated memory transferred to OS, no need to free it
     OpenClipboard(NULL);
     EmptyClipboard();
-    SetClipboardData(CF_HDROP, df);
+    if (!SetClipboardData(CF_HDROP, df)) return CLIP_ERR;
     CloseClipboard();
 
     delete[] path;
