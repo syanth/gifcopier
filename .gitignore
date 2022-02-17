@@ -4,8 +4,9 @@
 
 ### Web Extension Build ###
 /extension/dist/
+/app/build/
 
-# Unnecessary files due to CMake
+# Not needed
 *.sln
 *.vcxproj
 *.vcxproj.filters
