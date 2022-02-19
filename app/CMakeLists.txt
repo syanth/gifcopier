@@ -12,12 +12,12 @@ elseif(APPLE)
     list(APPEND APP_SOURCES app_mac.mm)
 endif()
 
+add_executable(ClipApp clipapp.cpp ${APP_SOURCES})
+
 if(APPLE)
     find_library(APPKIT_LIBRARY Appkit)
     target_link_libraries(ClipApp ${APPKIT_LIBRARY})
 endif()
-
-add_executable(ClipApp clipapp.cpp ${APP_SOURCES})
 
 ##################
 ### TEST SETUP ###
