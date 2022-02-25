@@ -15,7 +15,7 @@ endif()
 add_executable(ClipApp clipapp.cpp ${APP_SOURCES})
 
 if(APPLE)
-    find_library(APPKIT_LIBRARY Appkit)
+    find_library(APPKIT_LIBRARY AppKit)
     target_link_libraries(ClipApp ${APPKIT_LIBRARY})
 endif()
 
@@ -37,6 +37,7 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(app_test app_test.cpp ${APP_SOURCES})
 target_link_libraries(app_test gtest_main)
+target_link_libraries(app_test ${APPKIT_LIBRARY})
 
 include(GoogleTest)
 gtest_discover_tests(app_test)

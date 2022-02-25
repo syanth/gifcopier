@@ -1,4 +1,4 @@
-#include <Appkit/Appkit.h>
+#include <AppKit/AppKit.h>
 #include "clipapp.h"
 
 int CopyToClipboard(std::string pathStr) {
