@@ -6,10 +6,14 @@
 /extension/dist/
 /app/build/
 
-# Not needed
+# macOS
+.DS_Store
+
+# Not needed, CMake will generate IDE files
 *.sln
 *.vcxproj
 *.vcxproj.filters
+
 
 ### CMake ###
 CMakeLists.txt.user
@@ -169,6 +173,7 @@ dist
 .svelte-kit
 
 ### VisualStudioCode ###
+.vscode/
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
