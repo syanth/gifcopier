@@ -1,7 +1,7 @@
 #include "clipapp.h"
 
 int DownloadClip(std::string URL) {
-    std::string command = "curl -so clip.mp4 " + URL;
+    std::string command = "curl -o clip.mp4 \"" + URL + "\"";
     system(command.c_str());
     // Verify file is non-empty
     fs::path clip = "clip.mp4";

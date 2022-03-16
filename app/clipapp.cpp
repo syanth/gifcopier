@@ -10,17 +10,15 @@ int main()
         
     logfile.open("clipapp.log");
 
-    std::string URL = "https://i.imgur.com/FKSBCVT.mp4";
-    //std::string URL = getURL();
-    //logfile << "Received URL: " + URL;
+    std::string URL = getURL();
+    logfile << "Received URL: " + URL;
     
     if (DownloadClip(URL)) OnError(FILE_ERR);
-
     fs::path clip = "clip.mp4";
     fs::path p = fs::current_path() / clip;
     if (CopyToClipboard(p.string())) OnError(CLIP_ERR);
 
-    //SendStatus(true);
+    SendStatus(true);
 
     logfile.close();
 }
