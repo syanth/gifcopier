@@ -16,25 +16,25 @@ browser.contextMenus.create({
     contexts: ["video"]
 });
 
+browser.contextMenus.create({
+    id: "copy-gif",
+    title: "Copy GIF",
+    contexts: ["image"],
+    "targetUrlPatterns":["*://*/*.gif"]
+});
+
 browser.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "copy-gifv") {
-        console.log(info);
-        console.log("Original URL: ", info.srcUrl);
-        let fixedURL = getURL(info.srcUrl);
-        console.log("Fixed URL: ", fixedURL)
-        console.log("Sending URL");
         var sending = browser.runtime.sendNativeMessage(
-          "com.syanth.clipcopier",
-          fixedURL);
+            "com.syanth.clipcopier",
+            info.srcUrl);
+          sending.then(onResponse, onError);
+    }
+    else if (info.menuItemId === "copy-gif") {
+        var sending = browser.runtime.sendNativeMessage(
+            "com.syanth.clipcopier",
+            info.srcUrl);
         sending.then(onResponse, onError);
     }
 }
 );
-
-function getURL(URL) {
-    if (URL.includes("preview.redd.it") && !URL.includes("external")) {
-        URL = URL.replace("preview", "i");
-        return URL;
-    }
-    return URL
-}
