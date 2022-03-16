@@ -1,0 +1,9 @@
+{
+    "name": "com.syanth.clipcopier",
+    "description": "Clipcopier",
+    "path": "C:\\dev\\clipcopier\\app\\build\\Debug\\ClipApp.exe",
+    "type": "stdio",
+    "allowed_extensions": [
+      "clipcopier@syanth"
+    ]
+}

@@ -15,7 +15,8 @@
     },
 
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "nativeMessaging"
     ],
 
     "background": {
