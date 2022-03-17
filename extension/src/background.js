@@ -1,6 +1,6 @@
 import browser from "webextension-polyfill"
 
-var port = browser.runtime.connectNative("com.syanth.clipcopier")
+var port = browser.runtime.connectNative("com.syanth.gifcopier")
 
 function onResponse(response) {
     console.log("Received " + JSON.stringify(response));
@@ -26,13 +26,13 @@ browser.contextMenus.create({
 browser.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "copy-gifv") {
         var sending = browser.runtime.sendNativeMessage(
-            "com.syanth.clipcopier",
+            "com.syanth.gifcopier",
             info.srcUrl);
           sending.then(onResponse, onError);
     }
     else if (info.menuItemId === "copy-gif") {
         var sending = browser.runtime.sendNativeMessage(
-            "com.syanth.clipcopier",
+            "com.syanth.gifcopier",
             info.srcUrl);
         sending.then(onResponse, onError);
     }
