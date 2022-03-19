@@ -1,9 +1,11 @@
 cmake_minimum_required(VERSION 3.14)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 
 project(ClipApp)
 
 set(APP_SOURCES "")
+
+list(APPEND APP_SOURCES clip_file.cpp)
 
 if(WIN32)
     list(APPEND APP_SOURCES app_win.cpp)
@@ -37,7 +39,9 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(app_test app_test.cpp ${APP_SOURCES})
 target_link_libraries(app_test gtest_main)
-target_link_libraries(app_test ${APPKIT_LIBRARY})
+if(APPLE)
+    target_link_libraries(app_test ${APPKIT_LIBRARY})
+endif()
 
 include(GoogleTest)
 gtest_discover_tests(app_test)

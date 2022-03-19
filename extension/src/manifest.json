@@ -1,21 +1,22 @@
 {
     "manifest_version": 2,
-    "name": "ClipCopier",
+    "name": "GIFCopier",
     "version": "0.1",
     "description": "Extension for GIF and Video copying.",
-    "homepage_url": "https://github.com/syanth",
+    "homepage_url": "https://github.com/syanth/gifcopier",
     "icons": {
         "48": "icons/icon-48.png"
     },
 
     "browser_specific_settings": {
         "gecko": {
-          "id": "clipcopier@syanth"
+          "id": "gifcopier@syanth"
         }
     },
 
     "permissions": [
-        "contextMenus"
+        "contextMenus",
+        "nativeMessaging"
     ],
 
     "background": {
