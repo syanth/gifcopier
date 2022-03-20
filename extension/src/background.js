@@ -1,6 +1,6 @@
-import browser from "webextension-polyfill"
-
-var port = browser.runtime.connectNative("com.syanth.gifcopier")
+if (typeof browser === "undefined") {
+    var browser = chrome;
+}
 
 function onResponse(response) {
     console.log("Received " + JSON.stringify(response));
@@ -27,14 +27,13 @@ browser.contextMenus.onClicked.addListener((info, tab) => {
     if (info.menuItemId === "copy-gifv") {
         var sending = browser.runtime.sendNativeMessage(
             "com.syanth.gifcopier",
-            info.srcUrl);
+            {"text": info.srcUrl});
           sending.then(onResponse, onError);
     }
     else if (info.menuItemId === "copy-gif") {
         var sending = browser.runtime.sendNativeMessage(
             "com.syanth.gifcopier",
-            info.srcUrl);
+            {"text": info.srcUrl});
         sending.then(onResponse, onError);
     }
-}
-);
+});
