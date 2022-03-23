@@ -7,19 +7,30 @@ int main()
     #ifdef _DEBUG
     _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
     #endif
-        
+    
+    int err = 0;
     logfile.open("clipapp.log");
-
     std::string URL = getURL();
     logfile << "Received URL: " + URL;
     
-    if (DownloadClip(URL)) LogError(FILE_ERR);
-    fs::path clip = "clip.mp4";
-    fs::path p = fs::current_path() / clip;
-    if (CopyToClipboard(p.string())) LogError(CLIP_ERR);
+    try {
+        err = DownloadClip(URL);
+        if (err) LogError(err);
+    }
+    catch (...) {
+        LogError(FILE_ERR);
+    }
+    try {
+        fs::path clip = "clip.mp4";
+        fs::path p = fs::current_path() / clip;
+        err = CopyToClipboard(p.string());
+        if (err) LogError(err);
+    }
+    catch (...) {
+        LogError(CLIP_ERR);
+    }
 
     SendStatus(true);
-
     logfile.close();
 }
 
@@ -33,7 +44,7 @@ std::string getURL() {
     std::string msgStr(msg);
     delete[] msg;
 
-    // Actual message string is between quotations, rest is gibberish
+    // Actual message string is between quotations.
     size_t end = msgStr.find_last_of("\"");
     std::string msgTrim = msgStr.substr(9, end - 9);
     return msgTrim;
