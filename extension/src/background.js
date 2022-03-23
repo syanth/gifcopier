@@ -10,17 +10,18 @@ function onError(error) {
     console.log(`Error: ${error}`);
 }
 
-browser.contextMenus.create({
-    id: "copy-gifv",
-    title: "Copy GIFV",
-    contexts: ["video"]
-});
-
-browser.contextMenus.create({
-    id: "copy-gif",
-    title: "Copy GIF",
-    contexts: ["image"],
-    "targetUrlPatterns":["*://*/*.gif"]
+chrome.runtime.onInstalled.addListener(() => {
+    browser.contextMenus.create({
+        id: "copy-gifv",
+        title: "Copy GIFV",
+        contexts: ["video"]
+    });
+    browser.contextMenus.create({
+        id: "copy-gif",
+        title: "Copy GIF",
+        contexts: ["image"],
+        "targetUrlPatterns":["*://*/*.gif"]
+    });
 });
 
 browser.contextMenus.onClicked.addListener((info, tab) => {
