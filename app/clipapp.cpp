@@ -11,7 +11,7 @@ int main()
     int err = 0;
     logfile.open("clipapp.log");
     std::string URL = getURL();
-    logfile << "Received URL: " + URL;
+    logfile << "Received URL: " + URL + "\n";
     
     try {
         err = DownloadClip(URL);

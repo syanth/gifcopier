@@ -18,7 +18,7 @@ chrome.runtime.onInstalled.addListener(() => {
     });
     browser.contextMenus.create({
         id: "copy-gif",
-        title: "Copy GIF",
+        title: "Copy GIF as MP4",
         contexts: ["image"],
         "targetUrlPatterns":["*://*/*.gif"]
     });
