@@ -14,4 +14,4 @@ int CopyToClipboard(std::string pathStr);
 std::string getURL();
 void SendStatus(bool success);
 int DownloadClip(std::string URL);
-void OnError(int errorCode);
+void LogError(int errorCode);

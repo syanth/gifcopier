@@ -4,6 +4,8 @@
 
 ### Web Extension Build ###
 /extension/dist/
+/extension/dist_firefox/
+/extension/dist_chrome/
 /app/build/
 
 # macOS

@@ -1,0 +1,19 @@
+{
+    "manifest_version": 3,
+    "name": "GIFCopier",
+    "version": "0.1",
+    "description": "Extension for GIF and Video copying.",
+    "homepage_url": "https://github.com/syanth/gifcopier",
+    "icons": {
+        "48": "icons/icon-48.png"
+    },
+
+    "permissions": [
+        "contextMenus",
+        "nativeMessaging"
+    ],
+
+    "background": {
+        "service_worker": "background.js"
+    }
+}
