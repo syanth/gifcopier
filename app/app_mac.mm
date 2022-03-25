@@ -2,6 +2,8 @@
 #include "clipapp.h"
 
 int CopyToClipboard(std::string pathStr) {
+    pathStr = "file://" + pathStr;
+
     NSString *urlNSStr = [NSString stringWithUTF8String:pathStr.c_str()];
     NSURL *URL = [NSURL URLWithString:urlNSStr];
 
