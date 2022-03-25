@@ -7,7 +7,7 @@ int DownloadClip(std::string URL) {
         // Converting the GIF to MP4.
         // faststart for browsers to play as it loads, yuv420p is the most common pixel format
         // Crop to get dimensions divisible by 2 for H.264 (We will only lose at most 1 line of pixels)
-        command = "ffmpeg -i clip.gif -movflags faststart -pix_fmt yuv420p -vf \"crop = trunc(iw / 2) * 2:trunc(ih / 2) * 2\" clip.mp4";
+        command = "./ffmpeg -i clip.gif -movflags faststart -pix_fmt yuv420p -vf \"crop = trunc(iw / 2) * 2:trunc(ih / 2) * 2\" clip.mp4";
         system(command.c_str());
     }
     else
