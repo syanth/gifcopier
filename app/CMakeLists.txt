@@ -5,8 +5,6 @@ project(ClipApp)
 
 set(APP_SOURCES "")
 
-list(APPEND APP_SOURCES clip_file.cpp)
-
 if(WIN32)
     list(APPEND APP_SOURCES app_win.cpp)
 elseif(APPLE)

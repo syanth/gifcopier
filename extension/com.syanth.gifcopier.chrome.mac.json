@@ -1,0 +1,9 @@
+{
+    "name": "com.syanth.gifcopier",
+    "description": "Clipboard app for copying GIFs",
+    "path": "/Users/syanth/dev/gifcopier/app/build/ClipApp",
+    "type": "stdio",
+    "allowed_origins": [
+      "chrome-extension://bdfdpfmfpimmmbkplpimmpdonnlfeocm/"
+    ]
+}
