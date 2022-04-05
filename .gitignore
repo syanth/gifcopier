@@ -7,6 +7,7 @@
 /extension/dist_firefox/
 /extension/dist_chrome/
 /app/build/
+/install/clipapp.zip
 
 # macOS
 .DS_Store
