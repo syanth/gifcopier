@@ -1,16 +1,19 @@
 #Requires -RunAsAdministrator
 param($uninstallFlag)
 
-$installLocation = "C:\Program Files\GIFCopier"
+$installLocation = "C:\GIFCopier\"
+$FFkey = "HKCU:\SOFTWARE\Mozilla\NativeMessagingHosts\com.syanth.gifcopier"
+$ChromeKey = "HKCU:\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.syanth.gifcopier"
+$EdgeKey = "HKCU:\SOFTWARE\Microsoft\Edge\NativeMessagingHosts\com.syanth.gifcopier"
 
 if ($uninstallFlag) {
     $confirmation = Read-Host "Are you sure you want to uninstall GIFCopier? (y/n)"
     if ($confirmation -eq 'y') {
         Remove-Item $installLocation -Force -Recurse
         # Remove Registries
-        Remove-Item -Path "HKCU:\SOFTWARE\Mozilla\NativeMessagingHosts\com.syanth.gifcopier" -Force
-        Remove-Item -Path "HKCU:\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.syanth.gifcopier" -Force
-        Remove-Item -Path "HKCU:\SOFTWARE\Microsoft\Edge\NativeMessagingHosts\com.syanth.gifcopier" -Force
+        Remove-Item -Path $FFkey -Force
+        Remove-Item -Path $ChromeKey -Force
+        Remove-Item -Path $EdgeKey -Force
     }
     else {
         Write-Host "Exiting."
@@ -35,12 +38,12 @@ else {
 
 mkdir $installLocation
 
-Expand-Archive -Path "clipapp.zip" -DestinationPath "C:\Program Files\GIFCopier\"
+Expand-Archive -Path "clipapp.zip" -DestinationPath $installLocation
 if (-not $?) {
     Exit -1
 }
-Copy-Item -Path "install.ps1" -Destination "C:\Program Files\GIFCopier\"
-Copy-Item -Path "uninstall.cmd" -Destination "C:\Program Files\GIFCopier\"
+Copy-Item -Path "install.ps1" -Destination $installLocation
+Copy-Item -Path "uninstall.cmd" -Destination $installLocation
 
 function Add-ManifestKey {
     param (
@@ -57,11 +60,11 @@ function Add-ManifestKey {
     New-ItemProperty -Path $key.PSPath -Name "(Default)" -Value $manifestPath
 }
 
-Add-ManifestKey "HKCU:\SOFTWARE\Mozilla\NativeMessagingHosts\com.syanth.gifcopier" "C:\Program Files\GIFCopier\com.syanth.gifcopier.firefox.json"
-Add-ManifestKey "HKCU:\SOFTWARE\Google\Chrome\NativeMessagingHosts\com.syanth.gifcopier" "C:\Program Files\GIFCopier\com.syanth.gifcopier.chrome.json"
-Add-ManifestKey "HKCU:\SOFTWARE\Microsoft\Edge\NativeMessagingHosts\com.syanth.gifcopier" "C:\Program Files\GIFCopier\com.syanth.gifcopier.chrome.json"
+Add-ManifestKey $FFkey ($installLocation + "\com.syanth.gifcopier.firefox.json")
+Add-ManifestKey $ChromeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
+Add-ManifestKey $EdgeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
 
 # Open Browsers at App store pages
-Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "google.com"
-Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "google.com"
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "google.com"
+# Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "google.com"
+# Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "google.com"
+# Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "google.com"

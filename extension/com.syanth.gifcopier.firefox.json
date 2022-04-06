@@ -1,7 +1,7 @@
 {
     "name": "com.syanth.gifcopier",
     "description": "Clipboard app for copying GIFs",
-    "path": "C:\\dev\\gifcopier\\app\\build\\Debug\\ClipApp.exe",
+    "path": "C:\\GIFCopier\\ClipApp.exe",
     "type": "stdio",
     "allowed_extensions": [
       "gifcopier@syanth"
