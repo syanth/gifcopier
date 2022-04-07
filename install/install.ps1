@@ -42,8 +42,6 @@ Expand-Archive -Path "clipapp.zip" -DestinationPath $installLocation
 if (-not $?) {
     Exit -1
 }
-Copy-Item -Path "install.ps1" -Destination $installLocation
-Copy-Item -Path "uninstall.cmd" -Destination $installLocation
 
 function Add-ManifestKey {
     param (
