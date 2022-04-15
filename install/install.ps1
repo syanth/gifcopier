@@ -63,6 +63,7 @@ Add-ManifestKey $ChromeKey ($installLocation + "\com.syanth.gifcopier.chrome.jso
 Add-ManifestKey $EdgeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
 
 # Open Browsers at App store pages
-# Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "google.com"
-# Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "google.com"
-# Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "google.com"
+
+Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "google.com"
+Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "google.com"
+Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "google.com"
