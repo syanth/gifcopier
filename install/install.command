@@ -31,9 +31,9 @@ unzip clipapp.zip -d $installLocation -x '__MACOSX/*'
 
 # Copy over Native Manifests
 
-cp /usr/local/GIFCopier/com.syanth.gifcopier.firefox.mac.json ~/"Library/Application Support/Mozilla/NativeMessagingHosts/com.syanth.gifcopier.json"
-cp /usr/local/GIFCopier/com.syanth.gifcopier.chrome.mac.json ~/"Library/Application Support/Google/Chrome/NativeMessagingHosts/com.syanth.gifcopier.json"
-cp /usr/local/GIFCopier/com.syanth.gifcopier.chrome.mac.json ~/"Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.syanth.gifcopier.json"
+cp -f "${installLocation}gifcopier/com.syanth.gifcopier.firefox.mac.json" ~/"Library/Application Support/Mozilla/NativeMessagingHosts/com.syanth.gifcopier.json"
+cp -f "${installLocation}gifcopier/com.syanth.gifcopier.chrome.mac.json" ~/"Library/Application Support/Google/Chrome/NativeMessagingHosts/com.syanth.gifcopier.json"
+cp -f "${installLocation}gifcopier/com.syanth.gifcopier.chrome.mac.json" ~/"Library/Application Support/Microsoft Edge/NativeMessagingHosts/com.syanth.gifcopier.json"
 
 # Open Browsers at App Store Pages
 

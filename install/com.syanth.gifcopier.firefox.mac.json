@@ -3,7 +3,7 @@
     "description": "Clipboard app for copying GIFs",
     "path": "/Applications/gifcopier/ClipApp",
     "type": "stdio",
-    "allowed_origins": [
-      "chrome-extension://bdfdpfmfpimmmbkplpimmpdonnlfeocm/"
+    "allowed_extensions": [
+      "gifcopier@syanth"
     ]
 }
