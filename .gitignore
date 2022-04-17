@@ -7,6 +7,8 @@
 /extension/dist_firefox/
 /extension/dist_chrome/
 /app/build/
+/install/clipapp.zip
+/install/gifcopier/
 
 # macOS
 .DS_Store

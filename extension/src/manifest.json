@@ -5,7 +5,9 @@
     "description": "Extension for GIF and Video copying.",
     "homepage_url": "https://github.com/syanth/gifcopier",
     "icons": {
-        "48": "icons/icon-48.png"
+        "128": "icons/icon-128.png",
+        "48": "icons/icon-48.png",
+        "32": "icons/icon-32.png"
     },
 
     "browser_specific_settings": {
