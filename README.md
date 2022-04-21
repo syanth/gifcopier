@@ -18,7 +18,7 @@ Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with som
 - MacOS: Run install.command.
 - Chrome for the time being will require you to manually install the .crx package included.
 - Go to chrome://extensions/, enable Developer Mode, and drag the .crx package onto the page.
-- You may need to restart Chrome 
+- You may need to restart Chrome and go to the Manage Extensions Page, it will then enable.
 - Now you can right click on a GIF or GIFV and copy it.
 
 ## Note:

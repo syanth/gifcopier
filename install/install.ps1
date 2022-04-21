@@ -43,10 +43,9 @@ if (-not $?) {
     Exit -1
 }
 
-function Add-ManifestKey {
+function CheckAndCreateKey {
     param (
-        $regPath,
-        $manifestPath
+        $regPath
     )
 
     $key = try {
@@ -55,12 +54,27 @@ function Add-ManifestKey {
     catch {
         New-Item -Path $regPath -Force
     }
+    return $key
+}
+
+function Add-ManifestKey {
+    param (
+        $regPath,
+        $manifestPath
+    )
+
+    $key = CheckAndCreateKey $regPath
     New-ItemProperty -Path $key.PSPath -Name "(Default)" -Value $manifestPath
 }
 
 Add-ManifestKey $FFkey ($installLocation + "\com.syanth.gifcopier.firefox.json")
 Add-ManifestKey $ChromeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
 Add-ManifestKey $EdgeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
+
+CheckAndCreateKey "HKLM:\SOFTWARE\Policies\Google"
+CheckAndCreateKey "HKLM:\SOFTWARE\Policies\Google\Chrome"
+CheckAndCreateKey "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallWhitelist"
+New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallWhitelist" -Name "1" -Value "ncddcifdiglpdkflenjfceajajjmglji"
 
 # Open Browsers at App store pages
 
