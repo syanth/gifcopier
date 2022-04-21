@@ -1,8 +1,10 @@
 # GIFCopier
 
-Browser extension for easy copying of short video clips and GIFs.
+#### Browser extension for easy copying of short video clips and GIFs.
 
 Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with someone directly, and you couldn't copy and paste it into a chat? Now you can.
+
+![Demo of extension](/install/Copy_GIF.png?raw=true)
 
 ## Support
 - OS: Windows, MacOS
@@ -14,11 +16,11 @@ Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with som
 
 ## Instructions:
 
-### Windows: Run install.cmd as Administrator.
-### MacOS: Run install.command.
-
+- WindowS: Run install.cmd as Administrator.
+- MacOS: Run install.command.
 - Chrome for the time being will require you to manually install the .crx package included.
 - Go to chrome://extensions/, enable Developer Mode, and drag the .crx package onto the page. 
+- Now you can right click on a GIF or GIFV and copy it.
 
 ## Note:
 - Works with most GIFs and GIFVs on the internet.
