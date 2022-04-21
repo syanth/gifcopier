@@ -4,11 +4,9 @@
 
 Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with someone directly, and you couldn't copy and paste it into a chat? Now you can.
 
-![Demo of extension](/install/Copy_GIF.png?raw=true)
-
 ## Support
 - OS: Windows, MacOS
-- Browser: Chrome, Firefox, Edge
+- Browser: Chrome (On Windows), Firefox, Edge
 
 ## Features:
 - Copy GIFVs to clipboard. Can be pasted into any chat (i.e. Messenger, WhatsApp)
@@ -16,10 +14,11 @@ Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with som
 
 ## Instructions:
 
-- WindowS: Run install.cmd as Administrator.
+- Windows: Run install.cmd as Administrator.
 - MacOS: Run install.command.
 - Chrome for the time being will require you to manually install the .crx package included.
-- Go to chrome://extensions/, enable Developer Mode, and drag the .crx package onto the page. 
+- Go to chrome://extensions/, enable Developer Mode, and drag the .crx package onto the page.
+- You may need to restart Chrome 
 - Now you can right click on a GIF or GIFV and copy it.
 
 ## Note:
@@ -28,3 +27,5 @@ Many GIFs these days are actually MP4 clips. Ever wanted to share a GIF with som
 
 ## How it works:
 - Install.cmd/command will install the native application which will handle copying the GIF.
+
+![Demo of extension](/install/demo.png?raw=true)
