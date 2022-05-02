@@ -47,7 +47,7 @@ int CopyToClipboard(std::string pathStr) {
 int DownloadClip(std::string URL) {
     system("del /q clip.gif");
     system("del /q clip.mp4");
-    if (!URL.compare(URL.size() - 4, 4, ".gif")) {
+    if (URL.find("mp4") == -1) {
         std::string command = "curl -o clip.gif \"" + URL + "\"";
         system(command.c_str());
         // Converting the GIF to MP4.
