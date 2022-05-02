@@ -69,7 +69,7 @@ function Add-ManifestKey {
 
 Add-ManifestKey $FFkey ($installLocation + "\com.syanth.gifcopier.firefox.json")
 Add-ManifestKey $ChromeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
-Add-ManifestKey $EdgeKey ($installLocation + "\com.syanth.gifcopier.chrome.json")
+Add-ManifestKey $EdgeKey ($installLocation + "\com.syanth.gifcopier.edge.json")
 
 CheckAndCreateKey "HKLM:\SOFTWARE\Policies\Google"
 CheckAndCreateKey "HKLM:\SOFTWARE\Policies\Google\Chrome"
