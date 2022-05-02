@@ -20,7 +20,7 @@ chrome.runtime.onInstalled.addListener(() => {
         id: "copy-gif",
         title: "Copy GIF as MP4",
         contexts: ["image"],
-        "targetUrlPatterns":["*://*/*.gif"]
+        "targetUrlPatterns":["*://*/*.gif*"]
     });
 });
 
