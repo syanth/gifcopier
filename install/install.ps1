@@ -78,6 +78,6 @@ New-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Google\Chrome\ExtensionInstallWh
 
 # Open Browsers at App store pages
 
-Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "google.com"
+Start-Process "C:\Program Files\Mozilla Firefox\firefox.exe" "https://addons.mozilla.org/en-US/firefox/addon/gifcopier/"
 Start-Process "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe" "google.com"
-Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "google.com"
+Start-Process "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" "https://microsoftedge.microsoft.com/addons/detail/gifcopier/ilkmmecafihenljghaofocefdofekafo"

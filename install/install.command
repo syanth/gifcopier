@@ -37,6 +37,6 @@ cp -f "${installLocation}gifcopier/com.syanth.gifcopier.chrome.mac.json" ~/"Libr
 
 # Open Browsers at App Store Pages
 
-open -n -a "Firefox" --args "--new-window" "google.com"
+open -n -a "Firefox" --args "--new-window" "https://addons.mozilla.org/en-US/firefox/addon/gifcopier/"
 open -n -a "Google Chrome" --args "--new-window" "google.com"
-open -n -a "Microsoft Edge" --args "--new-window" "google.com"
+open -n -a "Microsoft Edge" --args "--new-window" "https://microsoftedge.microsoft.com/addons/detail/gifcopier/ilkmmecafihenljghaofocefdofekafo"
